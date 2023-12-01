@@ -18,19 +18,12 @@ const wordDigitMap = new Map([
 
 function isWordNumber(line) {
   const array = Array.from(line);
-  // console.log(array);
   let wordMatchesMap = new Map();
-  let wordMatches = [];
-  let matchIndexes = [];
   const wordArray = Array.from(wordDigitMap.keys());
-  // console.log(wordArray);
   wordArray.forEach((wordNum) => {
-    // console.log(wordNum);
   let left = 0;
   let right = array.length - 1;
-  // console.log(left + "" + right);
   while (left <= right) {
-    // console.log(left + "" + right);
     let leftMatch = false;
     let rightMatch = false;
     if (array[left] === wordNum.charAt(0)) {
@@ -40,16 +33,10 @@ function isWordNumber(line) {
       rightMatch = true;
     }
     if (leftMatch && rightMatch) {
-       //console.log("left:" + left + "right:" + right);
-       //console.log("substring:" + line.substring(left, right + 1));
-       // console.log(wordNum == line.substring(left, right + 1));
        if (line.substring(left, right + 1) == wordNum) {
-        //console.log("WHOOPEE");
         wordMatchesMap.set(wordNum, right);
-         // console.log(wordMatches);
        }
        right--;
-    
     } else if (leftMatch) {
       right--; 
     } else {
@@ -58,9 +45,7 @@ function isWordNumber(line) {
     }
   }
   });
-  // console.log(wordMatchesMap);
   const map1 = new Map([...wordMatchesMap.entries()].sort((a, b) => a[1] - b[1]));
-  // console.log(map1);
     return map1;
 }
 
@@ -96,19 +81,13 @@ const part2 = (rawInput) => {
         numArray.push(line.charAt(0));
         line = line.substring(1);
       } else {
-        // console.log("hit");
         const wordNumberMap = isWordNumber(line);
-       
         if (wordNumberMap.size > 0) {
           console.log(wordNumberMap);
           Array.from(wordNumberMap.keys()).forEach((word) => {
             numArray.push(wordDigitMap.get(word));
           });
-           // console.log(wordNumber[0]);
            const lastNum = Array.from(wordNumberMap.entries()).pop();
-           console.log();
-          
-           // console.log(line.substring(wordNumber[1]));
           line = line.substring(lastNum[1]);
         } else {
           line = line.substring(1);
@@ -119,9 +98,8 @@ const part2 = (rawInput) => {
     console.log("calibrationValue:" + (numArray[0] + numArray[numArray.length - 1]));
     calibrationValues.push(numArray[0] + numArray[numArray.length - 1]);
   });
-
   console.log(calibrationValues);
-  return  calibrationValues.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  return calibrationValues.reduce((a, b) => parseInt(a) + parseInt(b), 0);
 };
 
 run({
