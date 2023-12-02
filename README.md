@@ -12,7 +12,7 @@
 <!--SOLUTIONS-->
 
 [![Day](https://badgen.net/badge/01/%E2%98%85%E2%98%85/green)](src/day01)
-![Day](https://badgen.net/badge/02/%E2%98%86%E2%98%86/gray)
+[![Day](https://badgen.net/badge/02/%E2%98%85%E2%98%85/green)](src/day02)
 ![Day](https://badgen.net/badge/03/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/04/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/05/%E2%98%86%E2%98%86/gray)
@@ -65,22 +65,20 @@ yarn start 1
 
 ## Results
 
-i did not keep this running the entire time i was working so these times are very inaccurate 
-
 <!--RESULTS-->
 
 ```
 Day 01
-Time part 1: 2.707ms
-Time part 2: 15.708ms
-Both parts: 18.415ms
+Time part 1: 2.667ms
+Time part 2: 15.155ms
+Both parts: 17.822ms
 ```
 
 ```
 Day 02
-Time part 1: -
-Time part 2: -
-Both parts: -
+Time part 1: 61.463ms
+Time part 2: 49.846ms
+Both parts: 111.309ms
 ```
 
 ```
@@ -245,8 +243,8 @@ Both parts: -
 ```
 
 ```
-Total stars: 2/50
-Total time: 18.415ms
+Total stars: 4/50
+Total time: 129.131ms
 ```
 
 <!--/RESULTS-->
