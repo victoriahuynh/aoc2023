@@ -93,7 +93,7 @@ const part2 = (rawInput) => {
       }
     }
 
-    // console.log(gearNumbers);
+    console.log(gearNumbers);
 
   return Object.values(gearNumbers).reduce((sum, array) => {
     if (array.length == 2) {
