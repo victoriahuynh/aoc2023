@@ -38,18 +38,17 @@ function getHandRanking(hand, hasJokers = false) {
   let pairCount = 0;
   let hasThree = false;
 
-  for (const [key, value] of Object.entries(cardCountMap)) {
-    let cardVal = value;
-    if (cardVal == 5) {
+  for (const value of Object.values(cardCountMap)) {
+    if (value == 5) {
       return "fiveOfAKind";
     }
-    if (cardVal == 4) {
+    if (value == 4) {
       return "fourOfAKind";
     }
-    if (cardVal == 3) {
+    if (value == 3) {
       hasThree = true;
     }
-    if (cardVal == 2) {
+    if (value == 2) {
       hasPair = true;
       pairCount++;
     }
@@ -130,7 +129,6 @@ const part2 = (rawInput) => {
       handRanking: handRankings[getHandRanking(cards[0], true)],
       handBid: cards[1],
     };
-
     gameHands.push(hand);
   });
 
@@ -139,8 +137,6 @@ const part2 = (rawInput) => {
   let totalWinnings = 0;
 
   gameHands.forEach((hand, idx) => {
-    if (hand.handRanking !== 0) {
-    }
     totalWinnings += parseInt(hand.handBid) * (idx + 1);
   });
 

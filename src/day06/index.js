@@ -5,8 +5,6 @@ const parseInput = (rawInput) => rawInput.split("\n");
 const part1 = (rawInput) => {
   const input = parseInput(rawInput);
 
-  console.log(input);
-
   let times = input[0]
     .split(":")[1]
     .trim()
@@ -18,9 +16,6 @@ const part1 = (rawInput) => {
     .split(" ")
     .filter((x) => x !== "");
 
-  console.log(times);
-  console.log(distances);
-
   let allWinningTimes = [];
 
   for (let i = 0; i < times.length; i++) {
@@ -29,7 +24,6 @@ const part1 = (rawInput) => {
     let winningTimes = 0;
 
     for (let j = 0; j <= time; j++) {
-      // console.log(j * (time - j));
       if (j * (time - j) > distance) {
         winningTimes++;
       }
@@ -43,8 +37,6 @@ const part1 = (rawInput) => {
 const part2 = (rawInput) => {
   const input = parseInput(rawInput);
 
-  console.log(input);
-
   let times = input[0]
     .split(":")[1]
     .trim()
@@ -56,31 +48,18 @@ const part2 = (rawInput) => {
     .split(" ")
     .filter((x) => x !== "");
 
-  let actualTime = times.join("");
-  let actualDistance = distances.join("");
+  let actualTime = parseInt(times.join(""));
+  let actualDistance = parseInt(distances.join(""));
 
-  console.log(times);
-  console.log(distances);
+  let winningTimes = 0;
 
-  let allWinningTimes = [];
-
-  for (let i = 0; i < times.length; i++) {
-    let time = parseInt(times[i]);
-    let distance = parseInt(distances[i]);
-    let winningTimes = 0;
-
-    for (let j = 0; j <= time; j++) {
-      // console.log(j * (time - j));
-      if (j * (time - j) > distance) {
-        winningTimes++;
-      }
+  for (let j = 0; j <= actualTime; j++) {
+    if (j * (actualTime - j) > actualDistance) {
+      winningTimes++;
     }
-    allWinningTimes.push(winningTimes);
   }
 
-  return allWinningTimes.reduce((a, b) => a * b, 1);
-
-  return;
+  return winningTimes;
 };
 
 run({
@@ -111,5 +90,5 @@ run({
     solution: part2,
   },
   trimTestInputs: true,
-  onlyTests: false,
+  onlyTests: true,
 });
