@@ -382,6 +382,11 @@ glob-parent@~5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
+heap-js@^2.3.0:
+  version "2.3.0"
+  resolved "https://packages.atlassian.com/api/npm/npm-remote/heap-js/-/heap-js-2.3.0.tgz#8eed2cede31ec312aa696eef1d4df0565841f183"
+  integrity sha512-E5303mzwQ+4j/n2J0rDvEPBN7GKjhis10oHiYOgjxsmxYgqG++hz9NyLLOXttzH8as/DyiBHYpUrJTZWYaMo8Q==
+
 html-encoding-sniffer@^3.0.0:
   version "3.0.0"
   resolved "https://packages.atlassian.com/api/npm/npm-remote/html-encoding-sniffer/-/html-encoding-sniffer-3.0.0.tgz#2cb1a8cf0db52414776e5b2a7a04d5dd98158de9"

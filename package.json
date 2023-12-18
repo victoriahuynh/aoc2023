@@ -18,7 +18,9 @@
     "aocrunner": "^1.9.6",
     "prettier": "^2.8.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "heap-js": "^2.3.0"
+  },
   "engines": {
     "node": ">=16.13.0"
   }
